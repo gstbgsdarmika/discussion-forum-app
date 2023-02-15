@@ -43,13 +43,18 @@ const userShape = {
 
 ThreadItemFooter.propTypes = {
   id: PropTypes.string.isRequired,
-  like: PropTypes.func.isRequired,
-  dislike: PropTypes.func.isRequired,
+  like: PropTypes.func,
+  dislike: PropTypes.func,
   createdAt: PropTypes.string.isRequired,
   totalComments: PropTypes.number.isRequired,
   user: PropTypes.shape(userShape).isRequired,
   upVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
   downVotesBy: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+ThreadItemFooter.defaultProps = {
+  like: null,
+  dislike: null,
 };
 
 export default ThreadItemFooter;

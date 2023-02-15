@@ -18,9 +18,14 @@ function ThreadsList({ threads, like, dislike }) {
 }
 
 ThreadsList.propTypes = {
-  like: PropTypes.func.isRequired,
-  dislike: PropTypes.func.isRequired,
+  like: PropTypes.func,
+  dislike: PropTypes.func,
   threads: PropTypes.arrayOf(PropTypes.shape(threadItemShape)).isRequired,
+};
+
+ThreadsList.defaultProps = {
+  like: null,
+  dislike: null,
 };
 
 export default ThreadsList;
